@@ -25,5 +25,23 @@ export class App {
     []
   );
 
-  
+  // Need the selected movies content
+  // passing the actual movie string
+  // how to get the current movie's by index from array?
+  protected favMovie(m:string) {
+    this.favourites.update(current => [...current, ]);
+
+    // this.favourites.push(this.movies[index]);
+
+
+
+    // this.favourites.update(favourites =>
+    //     favourites.filter((_, i) => i === index)
+    // );
+    // this.movies.update(current => [...current, m]);
+  }
+
+  protected deleteMovie(m:number) {
+
+  }
 }

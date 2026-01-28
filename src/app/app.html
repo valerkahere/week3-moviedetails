@@ -9,15 +9,27 @@
 
 
 <main class="main">
+  <h1>Week2 - Fav Movies App [Valerii Navalnyi, S00274450]</h1>
+  <h2>Movie List</h2>
   <ul>
   @for (m of movies(); track m;) {
     <li>
+      <button type="button" (click)="favMovie()">Favourite</button>
       {{ m }}
     </li>
   }
   </ul>
 
-  <button type="button">Favourite</button>
+  <h2>My Favourites</h2>
+  <ul>
+  @for (m of favourites(); track m;) {
+    <li>
+      <button type="button" (click)="deleteMovie($index)">Delete</button>
+      {{ m }}
+    </li>
+  }
+  </ul>
+
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
