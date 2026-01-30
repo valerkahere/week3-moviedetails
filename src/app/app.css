@@ -1,0 +1,12 @@
+ul {
+    list-style-type: disc;
+}
+
+.evenRow {
+    background-color: grey;
+    padding: 1em;
+}
+
+.oddRow {
+    padding: 1em;
+}

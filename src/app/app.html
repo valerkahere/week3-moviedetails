@@ -11,12 +11,10 @@
 <main class="main">
   <h1>Week2 - Fav Movies App [Valerii Navalnyi, S00274450]</h1>
   <h2>Movie List</h2>
-  <p>
-    {{ movies()[1] }}
-  </p>
+
   <ul>
-  @for (m of movies(); track m;) {
-    <li>
+  @for (m of movies(); track m; let isEven = $even;) {
+    <li [class.evenRow]="isEven" [class.oddRow]="!isEven">
       <button type="button" (click)="favMovie(`${m}`)">Favourite</button>
       {{ m }}
     </li>
@@ -25,18 +23,19 @@
 
   <h2>My Favourites</h2>
   <ul>
-  @for (m of favourites(); track m;) {
-    <li>
+    @if (favourites().length > 0) {
+    <h4>{{ favourites().length }} favorite movies</h4>
+  } @else {
+    <h4>No favourite movies found!</h4>
+  }
+  @for (m of favourites(); track m; let isEven = $even;) {
+    <li [class.evenRow]="isEven" [class.oddRow]="!isEven">
       <button type="button" (click)="deleteMovie($index)">Delete</button>
       {{ m }}
     </li>
   } 
 
-  @if (favourites().length > 0) {
-    <li>{{ favourites().length }} favorite movies</li>
-  } @else {
-    <li>No favourite movies found!</li>
-  }
+  
 
   </ul>
 
