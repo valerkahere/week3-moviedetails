@@ -21,7 +21,7 @@ export class App {
     ]
   );
 
-  protected favourites = signal(
+  protected favourites = signal<string[]>(
     []
   );
 
@@ -29,7 +29,7 @@ export class App {
   // passing the actual movie string
   // how to get the current movie's by index from array?
   protected favMovie(m:string) {
-    this.favourites.update(current => [...current, ]);
+    this.favourites.update(current => [...current, m]);
 
     // this.favourites.push(this.movies[index]);
 

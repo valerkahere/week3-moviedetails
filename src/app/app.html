@@ -17,7 +17,7 @@
   <ul>
   @for (m of movies(); track m;) {
     <li>
-      <button type="button" (click)="favMovie(`5`)">Favourite</button>
+      <button type="button" (click)="favMovie(`${m}`)">Favourite</button>
       {{ m }}
     </li>
   }
