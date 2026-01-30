@@ -31,6 +31,13 @@
       {{ m }}
     </li>
   } 
+
+  @if (favourites().length > 0) {
+    <li>{{ favourites().length }} favorite movies</li>
+  } @else {
+    <li>No favourite movies found!</li>
+  }
+
   </ul>
 
 </main>

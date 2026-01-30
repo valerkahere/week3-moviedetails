@@ -41,7 +41,9 @@ export class App {
     // this.movies.update(current => [...current, m]);
   }
 
-  protected deleteMovie(m:number) {
-
+  protected deleteMovie(index:number) {
+    this.favourites.update(favourites =>
+        favourites.filter((_, i) => i !== index)
+    );
   }
 }
