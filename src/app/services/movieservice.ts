@@ -14,11 +14,11 @@ export class Movieservice {
     {"title": "The Godfather", "year": 1972, "director": "Francis Ford Coppola"}
   ]);
 
-  public movies= this._movies.asReadonly();
+  public movies = this._movies.asReadonly();
 
-  private _favourites=signal<string[]>([]);
+  private _favourites = signal<string[]>([]);
 
-  public favourites= this._favourites.asReadonly();
+  public favourites = this._favourites.asReadonly();
 
   public delFav(index:number) {
     this._favourites.update(_favourites =>
