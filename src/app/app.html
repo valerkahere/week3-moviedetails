@@ -13,24 +13,24 @@
   <h2>Movie List</h2>
 
   <ul>
-  @for (m of movies(); track m; let isEven = $even;) {
+  @for (m of movieService.movies(); track m; let isEven = $even;) {
     <li [class.evenRow]="isEven" [class.oddRow]="!isEven">
-      <button type="button" (click)="favMovie(`${m}`)">Favourite</button>
-      {{ m }}
+      <button type="button" (click)="movieService.addFav(`${m}`)">Favourite</button>
+      {{ m.title }}
     </li>
   }
   </ul>
 
   <h2>My Favourites</h2>
   <ul>
-    @if (favourites().length > 0) {
-    <h4>{{ favourites().length }} favorite movies</h4>
+    @if (movieService.favourites().length > 0) {
+    <h4>{{ movieService.favourites().length }} favorite movies</h4>
   } @else {
     <h4>No favourite movies found!</h4>
   }
-  @for (m of favourites(); track m; let isEven = $even;) {
+  @for (m of movieService.favourites(); track m; let isEven = $even;) {
     <li [class.evenRow]="isEven" [class.oddRow]="!isEven">
-      <button type="button" (click)="deleteMovie($index)">Delete</button>
+      <button type="button" (click)="movieService.delFav($index)">Delete</button>
       {{ m }}
     </li>
   } 
